@@ -1,6 +1,7 @@
 '''
 define train and test function
 and data processing function
+called by run.py
 '''
 from config import POSITIVE_KolektorSDD
 import os
@@ -63,6 +64,7 @@ class Agent(object):
                 if i == self._param['epochs_num'] + self.model.step - 1:
                     self.model.save()
                 self.model.step += 1
+	
     def test(self):
         visualization_dir = './visualization/test'
         if not os.path.exists(visualization_dir):
