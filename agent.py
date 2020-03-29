@@ -44,10 +44,10 @@ class Agent(object):
                     for id in range(0,2):
                         if(id == 0):
                             image_batch,label_pixel_batch,label_batch,filename_batch = \
-                                self._session.run(self.positive_train_datalist.next_batch())
+                                self._session.run(self.positive_train_datalist.next_batch)
                         elif(id == 1):
                             image_batch,label_pixel_batch,label_batch,filename_batch = \
-                                self._session.run(self.negative_train_datalist.next_batch())
+                                self._session.run(self.negative_train_datalist.next_batch)
                         loss_step = 0
                         if mode is 'segment':
                             _,loss_step = self._session.run([self.model.optimize_segment,self.model.loss_pixel],\
